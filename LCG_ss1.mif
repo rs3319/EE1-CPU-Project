@@ -1,0 +1,35 @@
+DEPTH = 4096; % Memory depth and width are required %
+            % DEPTH is the number of locations %
+WIDTH = 16; % WIDTH is the number of bits of data per word %
+            % DEPTH and WIDTH should be entered as decimal numbers %
+ADDRESS_RADIX = HEX; % Address and value radixes are required %
+DATA_RADIX = HEX;    % Enter BIN, DEC, HEX, OCT, or UNS % 
+CONTENT
+BEGIN
+[0..FFF]: 0; % default value is 0 %
+0 : 0016;
+1 : a310;
+2 : 0017;
+3 : a320;
+4 : 0018;
+5 : a330;
+6 : 0019;
+7 : a340;
+8 : a354;
+9 : a373;
+a : a651;
+b : a452;
+c : a465;
+d : 8001;
+e : a570;
+f : a307;
+10 : 7012;
+11 : 500a;
+12 : a306;
+13 : 1015;
+14 : a000;
+16 : 6329;
+17 : 0003;
+18 : 0008;
+19 : 002a;
+END

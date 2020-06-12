@@ -1,0 +1,219 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 264 416)
+	(text "DataDecode" (rect 5 0 54 12)(font "Arial" ))
+	(text "inst" (rect 8 384 20 396)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IR_postmux[15..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "IR_postmux[15..0]" (rect 21 27 95 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "FETCH" (rect 0 0 33 12)(font "Arial" ))
+		(text "FETCH" (rect 21 43 54 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "EXEC1" (rect 0 0 30 12)(font "Arial" ))
+		(text "EXEC1" (rect 21 59 51 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "EXEC2" (rect 0 0 31 12)(font "Arial" ))
+		(text "EXEC2" (rect 21 75 52 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "EXEC3" (rect 0 0 31 12)(font "Arial" ))
+		(text "EXEC3" (rect 21 91 52 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "MI" (rect 0 0 10 12)(font "Arial" ))
+		(text "MI" (rect 21 107 31 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 248 32)
+		(output)
+		(text "Add_Sub" (rect 0 0 38 12)(font "Arial" ))
+		(text "Add_Sub" (rect 189 27 227 39)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32)(line_width 1))
+	)
+	(port
+		(pt 248 48)
+		(output)
+		(text "MUX3_select" (rect 0 0 54 12)(font "Arial" ))
+		(text "MUX3_select" (rect 173 43 227 55)(font "Arial" ))
+		(line (pt 248 48)(pt 232 48)(line_width 1))
+	)
+	(port
+		(pt 248 64)
+		(output)
+		(text "RegWrite[2..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "RegWrite[2..0]" (rect 167 59 227 71)(font "Arial" ))
+		(line (pt 248 64)(pt 232 64)(line_width 3))
+	)
+	(port
+		(pt 248 80)
+		(output)
+		(text "RegReadA[2..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "RegReadA[2..0]" (rect 159 75 227 87)(font "Arial" ))
+		(line (pt 248 80)(pt 232 80)(line_width 3))
+	)
+	(port
+		(pt 248 96)
+		(output)
+		(text "RegReadB[2..0]" (rect 0 0 66 12)(font "Arial" ))
+		(text "RegReadB[2..0]" (rect 161 91 227 103)(font "Arial" ))
+		(line (pt 248 96)(pt 232 96)(line_width 3))
+	)
+	(port
+		(pt 248 112)
+		(output)
+		(text "Load" (rect 0 0 20 12)(font "Arial" ))
+		(text "Load" (rect 207 107 227 119)(font "Arial" ))
+		(line (pt 248 112)(pt 232 112)(line_width 1))
+	)
+	(port
+		(pt 248 128)
+		(output)
+		(text "Acc_shift_in" (rect 0 0 51 12)(font "Arial" ))
+		(text "Acc_shift_in" (rect 176 123 227 135)(font "Arial" ))
+		(line (pt 248 128)(pt 232 128)(line_width 1))
+	)
+	(port
+		(pt 248 144)
+		(output)
+		(text "Forced" (rect 0 0 28 12)(font "Arial" ))
+		(text "Forced" (rect 199 139 227 151)(font "Arial" ))
+		(line (pt 248 144)(pt 232 144)(line_width 1))
+	)
+	(port
+		(pt 248 160)
+		(output)
+		(text "FMOV" (rect 0 0 29 12)(font "Arial" ))
+		(text "FMOV" (rect 198 155 227 167)(font "Arial" ))
+		(line (pt 248 160)(pt 232 160)(line_width 1))
+	)
+	(port
+		(pt 248 176)
+		(output)
+		(text "ForcedALU" (rect 0 0 49 12)(font "Arial" ))
+		(text "ForcedALU" (rect 178 171 227 183)(font "Arial" ))
+		(line (pt 248 176)(pt 232 176)(line_width 1))
+	)
+	(port
+		(pt 248 192)
+		(output)
+		(text "MUXM_select" (rect 0 0 57 12)(font "Arial" ))
+		(text "MUXM_select" (rect 170 187 227 199)(font "Arial" ))
+		(line (pt 248 192)(pt 232 192)(line_width 1))
+	)
+	(port
+		(pt 248 208)
+		(output)
+		(text "AccEnable" (rect 0 0 44 12)(font "Arial" ))
+		(text "AccEnable" (rect 183 203 227 215)(font "Arial" ))
+		(line (pt 248 208)(pt 232 208)(line_width 1))
+	)
+	(port
+		(pt 248 224)
+		(output)
+		(text "LogSel[1..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "LogSel[1..0]" (rect 181 219 227 231)(font "Arial" ))
+		(line (pt 248 224)(pt 232 224)(line_width 3))
+	)
+	(port
+		(pt 248 240)
+		(output)
+		(text "Logic" (rect 0 0 21 12)(font "Arial" ))
+		(text "Logic" (rect 206 235 227 247)(font "Arial" ))
+		(line (pt 248 240)(pt 232 240)(line_width 1))
+	)
+	(port
+		(pt 248 256)
+		(output)
+		(text "PUSH" (rect 0 0 25 12)(font "Arial" ))
+		(text "PUSH" (rect 202 251 227 263)(font "Arial" ))
+		(line (pt 248 256)(pt 232 256)(line_width 1))
+	)
+	(port
+		(pt 248 272)
+		(output)
+		(text "CALL" (rect 0 0 27 12)(font "Arial" ))
+		(text "CALL" (rect 200 267 227 279)(font "Arial" ))
+		(line (pt 248 272)(pt 232 272)(line_width 1))
+	)
+	(port
+		(pt 248 288)
+		(output)
+		(text "EXEC2RET" (rect 0 0 53 12)(font "Arial" ))
+		(text "EXEC2RET" (rect 174 283 227 295)(font "Arial" ))
+		(line (pt 248 288)(pt 232 288)(line_width 1))
+	)
+	(port
+		(pt 248 304)
+		(output)
+		(text "IncDec" (rect 0 0 28 12)(font "Arial" ))
+		(text "IncDec" (rect 199 299 227 311)(font "Arial" ))
+		(line (pt 248 304)(pt 232 304)(line_width 1))
+	)
+	(port
+		(pt 248 320)
+		(output)
+		(text "Compare" (rect 0 0 37 12)(font "Arial" ))
+		(text "Compare" (rect 190 315 227 327)(font "Arial" ))
+		(line (pt 248 320)(pt 232 320)(line_width 1))
+	)
+	(port
+		(pt 248 336)
+		(output)
+		(text "CarrySel[1..0]" (rect 0 0 55 12)(font "Arial" ))
+		(text "CarrySel[1..0]" (rect 172 331 227 343)(font "Arial" ))
+		(line (pt 248 336)(pt 232 336)(line_width 3))
+	)
+	(port
+		(pt 248 352)
+		(output)
+		(text "RET" (rect 0 0 21 12)(font "Arial" ))
+		(text "RET" (rect 206 347 227 359)(font "Arial" ))
+		(line (pt 248 352)(pt 232 352)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 232 384)(line_width 1))
+	)
+)

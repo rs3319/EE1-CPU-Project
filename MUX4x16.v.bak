@@ -1,0 +1,19 @@
+module MUX4x16(sel,
+A,B,C,D,X)
+input [15:0] A,B,C,D;
+
+output [15:0] x;
+input [1:0] sel;
+always@(sel)
+begin
+	if (sel == 0b00)
+		assign x = A;
+	else if (sel == 0b01)
+		assign x = B;
+	else if (sel == 0b10)
+		assign x = C;
+	else 
+		assign x = D;
+end
+endmodule
+	

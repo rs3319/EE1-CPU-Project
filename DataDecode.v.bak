@@ -1,0 +1,60 @@
+module DataDecode
+(
+	input [7:0] IR_opcode,
+	input EXEC1,
+	input EXEC2,
+	input EXEC3,
+	output EQ,
+	output MI,
+	output Add_Sub,
+	output MUX3_select,
+	output [2:0] RegWrite,
+	output [2:0] RegReadA,
+	output [2:0] RegReadB,
+	output Load,
+	output Acc_shift_in,
+	output Forced
+);
+
+	wire LDA, STA, ADD, SUB, MUL, JMP, JMI, JEQ, LDI, LDN, SSS, PUSH, POP;
+	
+	assign LDA = ~IR_opcode[7] & ~IR_opcode[6] & ~IR_opcode[5] & ~IR_opcode[4];   
+	assign STA = ~IR_opcode[7] & ~IR_opcode[6] & ~IR_opcode[5] & IR_opcode[4];
+	assign ADD = ~IR_opcode[7] & ~IR_opcode[6] & IR_opcode[5] & ~IR_opcode[4];
+	assign SUB = ~IR_opcode[7] & ~IR_opcode[6] & IR_opcode[5] & IR_opcode[4];
+	assign MUL = ~IR_opcode[7] & IR_opcode[6] & ~IR_opcode[5] & ~IR_opcode[4]; 
+	assign JMP = ~IR_opcode[7] & IR_opcode[6] & ~IR_opcode[5] & IR_opcode[4]; 
+	assign JMI = ~IR_opcode[7] & IR_opcode[6] & IR_opcode[5] & ~IR_opcode[4];  
+	assign JEQ = ~IR_opcode[7] & IR_opcode[6] & IR_opcode[5] & IR_opcode[4]; 
+	assign LDI = IR_opcode[7] & ~IR_opcode[6] & ~IR_opcode[5] & ~IR_opcode[4]; 
+	assign LDN = IR_opcode[7] & ~IR_opcode[6] & ~IR_opcode[5] & IR_opcode[4];
+	assign SSS = IR_opcode[7] & ~IR_opcode[6] & IR_opcode[5] & ~IR_opcode[4];
+	assign PUSH = IR_opcode[7] & ~IR_opcode[6] & IR_opcode[5] & IR_opcode[4]; 
+	assign POP = IR_opcode[7] & IR_opcode[6] & ~IR_opcode[5] & ~IR_opcode[4];
+		
+	
+	wire STP, LSR, ASR, MOVR, INCR, DECR, ADDR, SUBR, MULR;
+	
+	assign STP = SSS & (~IR_opcode[3] & ~IR_opcode[2] & ~IR_opcode[1] & ~IR_opcode[0]);
+	assign LSR = SSS & (~IR_opcode[3] & ~IR_opcode[2] & ~IR_opcode[1] & IR_opcode[0]);
+	assign ASR = SSS & (~IR_opcode[3] & ~IR_opcode[2] & IR_opcode[1] & ~IR_opcode[0]);
+	assign MOVR = SSS & (~IR_opcode[3] & ~IR_opcode[2] & IR_opcode[1] & IR_opcode[0]);
+	assign ADDR = SSS & (~IR_opcode[3] & IR_opcode[2] & ~IR_opcode[1] & ~IR_opcode[0]);
+	assign SUBR = SSS & (~IR_opcode[3] & IR_opcode[2] & ~IR_opcode[1] & IR_opcode[0]);
+	assign MULR = SSS & (~IR_opcode[3] & IR_opcode[2] & IR_opcode[1] & ~IR_opcode[0]);
+
+	
+	
+	
+	
+	
+	assign Add_Sub = (EXEC2 & ADD) | (EXEC1 & ADDR);
+	assign MUX3_select = (EXEC3 & LDN) | (EXEC2 & LDA) | (EXEC1 & LDI);
+	assign Enable = (EXEC2 & (LDA | ADD | SUB | MUL)) | (EXEC1 & (LDI | LSR | ASR)) | (EXEC3 & LDN);
+	assign Acc_sync_load = ~(LSR | ASR);
+	assign Acc_shift_in = ASR & MI;
+	
+
+	assign Forced = LDI & EXEC1;
+	
+endmodule

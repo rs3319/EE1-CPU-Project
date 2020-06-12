@@ -1,0 +1,7 @@
+module Incrementor_12bit
+(
+	input [11:0] In,
+	output [11:0] Out
+); 
+
+	assign Out = In + 1;

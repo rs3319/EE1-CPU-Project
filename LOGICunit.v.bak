@@ -1,0 +1,11 @@
+module LOGICunit(
+A,B,AND,OR,NOT,XOR);
+input [15:0] A,B;
+output [15:0] AND,OR,NOT,XOR;
+
+assign AND = A&B;
+assign OR = A|B;
+assign NOT = ~A;
+assign XOR = A^B;
+
+endmodule 
