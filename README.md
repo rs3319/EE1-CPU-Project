@@ -1,3 +1,3 @@
-# EE1CPUProject
+# EE1 CPU Project
 
-This is the official repository of the SAR CPU design project. Alonside Microsoft teams, this was another version control system we used.
+This is the official repository of the SAR CPU design project. Alonside Microsoft teams, this was another version control system used. 
