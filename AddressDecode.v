@@ -18,7 +18,8 @@ module AddressDecode
 	output EXTRA2,
 	output pushpop,
 	output SP_Cnt,
-	output SpMux
+	output SpMux,
+	output ldnsel
 );
 
 	wire LDA, STA, ADD, SUB, MUL, JMP, JMI, JEQ, LDI, LDN, SSS, JME, JMG, JGE, CALL, RET, PUSH, POP, INC, DEC, STP;
@@ -61,5 +62,6 @@ module AddressDecode
 	assign SpMux = (PUSH | POP | CALL | RET) & EXEC1;
 	assign SP_Cnt = SpMux;
 	assign pushpop = (POP | RET) & EXEC1;
+	assign ldnsel = LDN & (EXEC1 | EXEC2);
 	
 endmodule
