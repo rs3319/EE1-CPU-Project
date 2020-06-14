@@ -2,9 +2,14 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+int main(int argc, char** argv){
 	Assembler tester;
 	tester.Load();
 	tester.Assemble();
-	tester.OutRAW();
+	if(atoi(argv[1]) == 1){
+	tester.Out();
+	}
+	else{
+		tester.OutRAW();
+	}
 }

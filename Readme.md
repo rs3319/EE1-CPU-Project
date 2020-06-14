@@ -17,5 +17,19 @@ Special Instructions:
 MEM (address) (data value):
 	Stores a data value at the address specified by the instruction prior to execution of the code. (All values are in decimal)
 
-SSS (Carry) (Operation) (Rd) (Rs)
+SSS (Carry bit 1) (Carry bit 0) (Operation) (Rd) (Rs)
+
+For .MIF Export:
+	
+	Run the Assembler with an arguement of 1.
+
+	It will read assembly from cin.
+
+For the Simulator: 
+	
+	Provide permissions for Simulate.sh using chmod +x.
+
+	Run Simulate.sh, It will run the assembly code in the file "test.txt".
+
+	The script will prompt the user for an Instruction execution period, this is the time between instructions being executed in seconds, leave it at 0 for maximum possible speed.
 

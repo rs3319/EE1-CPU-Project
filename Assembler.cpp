@@ -54,6 +54,7 @@ uint8_t Assembler::IndexMap(string Index){
 	}
 }
 uint8_t Assembler::OpMap(string Index){
+	//cout << Index << endl;
 	if(Index == "LDA"){
 		return 0;
 	}
@@ -91,7 +92,7 @@ uint8_t Assembler::OpMap(string Index){
 	else if(Index == "JME"){
 		return 11;
 	}
-	else if(Index == "CALL"){
+	else if(Index == "JMG"){
 		return 12;
 	}
 	else if(Index == "JGE"){
